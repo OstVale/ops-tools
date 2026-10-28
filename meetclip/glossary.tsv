@@ -1,0 +1,7 @@
+# Fixes for words the speech model often gets wrong. One rule per line:
+# regex<TAB>replacement (case-insensitive). Lines starting with # are skipped.
+\bpost gress\b	Postgres
+\bkuber netes\b	Kubernetes
+\bget lab\b	GitLab
+\bnext js\b	Next.js
+\bcloud flare\b	Cloudflare

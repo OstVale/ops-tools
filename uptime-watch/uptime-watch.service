@@ -1,0 +1,9 @@
+[Unit]
+Description=uptime-watch: production uptime checks
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/uptime-watch/check.sh
+TimeoutStartSec=300

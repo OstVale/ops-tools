@@ -1,0 +1,19 @@
+# Copy to /etc/uptime-watch/targets. One check per line: type name target [comment]
+# Types:
+#   http   URL        page answers 2xx or 3xx
+#   render URL        like http, plus the x-render-origin-server header (app is served by Render)
+#   cert   host       TLS certificate valid for at least CERT_MIN_DAYS days
+#   dnscf  host       all A records (via 1.1.1.1) are Cloudflare addresses (proxied)
+#   mx     domain=host  this host is in the domain's MX records
+#   tcp    host:port  port is open
+# name is used for the state file, so keep it unique and without spaces.
+# type    name        target
+http      site        https://example.com/
+http      site-www    https://www.example.com/
+render    app-login   https://example.com/login
+cert      cert-apex   example.com
+cert      cert-www    www.example.com
+dnscf     dns-apex    example.com
+dnscf     dns-www     www.example.com
+mx        dns-mx      example.com=mx1.example.com
+tcp       ssh         example.com:22
